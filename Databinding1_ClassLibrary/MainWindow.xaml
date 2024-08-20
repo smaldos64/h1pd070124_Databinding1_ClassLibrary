@@ -5,10 +5,39 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Datbinding1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="860" Background="Yellow">
+        Title="DataBinding1" Height="500" Width="860" Background="Yellow">
     <Grid>
-        <Label x:Name="lblBind1" Content="Test1" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="{Binding ElementName=sldBind1, Path=Value, Mode=TwoWay}" Margin="100,100,0,0"/>
-        <TextBox x:Name="txtBind1" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" Text="{Binding ElementName=sldBind1, Path=Value, Mode=TwoWay, TargetNullValue=50}" VerticalAlignment="Top" Width="120" Margin="100,250,0,0" KeyDown="txtCheckForValidKeyPressedPositiveInteger" />
-        <Slider x:Name="sldBind1" HorizontalAlignment="Left" VerticalAlignment="Top" Height="auto" Width="400" Minimum="1" Maximum="100" Margin="100,400,0,0" Value="{Binding ElementName=txtBind1, Path=Text, Mode=TwoWay}" Visibility="Visible" IsSnapToTickEnabled="True" TickFrequency="1" />
+        <Label x:Name="lblBind1" 
+               Content="Test1" 
+               HorizontalAlignment="Left" 
+               VerticalAlignment="Top" 
+               FontSize="{Binding ElementName=sldBind1, Path=Value, Mode=OneWay}" 
+               Margin="100,100,0,0"
+        />
+        
+        <TextBox x:Name="txtBind1" 
+                 HorizontalAlignment="Left" 
+                 Height="23" 
+                 TextWrapping="Wrap" 
+                 Text="{Binding ElementName=sldBind1, Path=Value, Mode=TwoWay, TargetNullValue=50}" 
+                 VerticalAlignment="Top" 
+                 Width="120" 
+                 Margin="100,250,0,0" 
+                 KeyDown="txtCheckForValidKeyPressedPositiveInteger" 
+        />
+        
+        <Slider x:Name="sldBind1" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Height="auto" 
+                Width="400" 
+                Minimum="1" 
+                Maximum="150" 
+                Margin="100,400,0,0" 
+                Value="{Binding ElementName=txtBind1, Path=Text, Mode=TwoWay}" 
+                Visibility="Visible" 
+                IsSnapToTickEnabled="True" 
+                TickFrequency="1" 
+        />
     </Grid>
 </Window>
